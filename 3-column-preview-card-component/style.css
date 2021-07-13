@@ -1,0 +1,128 @@
+:root {
+  --brightorange: hsl(31, 77%, 52%);
+  --darkcyan: hsl(184, 100%, 22%);
+  --verydarkcyan: hsl(179, 100%, 13%);
+  --transparentwhite: hsla(0, 0%, 100%, 0.75);
+  --verylightgray: hsl(0, 0%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  color: white;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--verylightgray);
+  font-family: "Lexend Deca", sans-serif;
+}
+
+p {
+  color: var(--transparentwhite);
+  font-family: "Lexend Deca", sans-serif;
+  line-height: 1.5rem;
+  font-size: small;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--verylightgray);
+  font-family: "Big Shoulders Display", sans-serif;
+  text-transform: uppercase;
+  margin: 1.8rem 0;
+}
+
+button {
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: 2px solid var(--verylightgray);
+  text-transform: capitalize;
+  margin-top: 1.5rem;
+  background-color: var(--verylightgray);
+}
+
+.container {
+  /* width: 90%; */
+  margin: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container--content1 {
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--brightorange);
+}
+
+.container--content2 {
+  background-color: var(--darkcyan);
+}
+
+.container--content3 {
+  border-radius: 0 0 0.5rem 0.5rem;
+  background-color: var(--verydarkcyan);
+}
+
+.container--content1,
+.container--content2,
+.container--content3 {
+  padding: 2rem;
+}
+
+.container--content1 button {
+  color: var(--brightorange);
+}
+
+.container--content2 button {
+  color: var(--darkcyan);
+}
+.container--content3 button {
+  color: var(--verydarkcyan);
+}
+
+.container--content1 button:hover,
+.container--content2 button:hover,
+.container--content3 button:hover {
+  background-color: transparent;
+  color: var(--transparentwhite);
+}
+
+@media only screen and (min-width: 770px) {
+  button {
+    margin-top: 5rem;
+  }
+
+  .container {
+    flex-direction: row;
+    /* margin: auto; */
+  }
+
+  .container--content1 {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .container--content3 {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .container--content1,
+  .container--content2,
+  .container--content3 {
+    max-width: 20rem;
+    min-width: 16rem;
+  }
+}
+
+@media only screen and (min-width: 770px) and (min-height: 600px) {
+  .container {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
