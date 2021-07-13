@@ -93,11 +93,13 @@ p {
 
   .header {
     border-radius: 0 0.6rem 0.6rem 0;
+    width: 50%;
   }
 
   .content {
     border-radius: 0.6rem 0 0 0.6rem;
     padding: 4.5rem 5rem;
+    width: 50%;
   }
 
   .content__section1 {
@@ -138,13 +140,5 @@ p {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  .header {
-    width: 50%;
-  }
-
-  .content {
-    width:50%
   }
 }
