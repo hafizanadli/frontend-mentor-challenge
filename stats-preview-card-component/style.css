@@ -139,4 +139,12 @@ p {
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .header {
+    width: 50%;
+  }
+
+  .content {
+    width:50%
+  }
 }
