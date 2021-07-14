@@ -1,0 +1,67 @@
+import React from "react";
+
+const ResultPanel = ({
+  setAvgTotal,
+  setAvgTip,
+  avgTotal,
+  avgTip,
+  bill,
+  setBill,
+  tip,
+  setTip,
+  people,
+  setPeople,
+  custom,
+  setCustom,
+}) => {
+  return (
+    <div className='bg-very-dark-cyan flex flex-col p-6 md:p10 justify-between rounded-2xl'>
+      <div>
+        <div className='flex justify-between items-center mt-3 overflow-hidden'>
+          <div className='w-1/2 md:w-1/4'>
+            <p className='text-white font-semibold'>Tip Amount</p>
+            <p className=' text-dark-grayish-cyan-2 font-semibold text-sm'>
+              / person
+            </p>
+          </div>
+          <div className='w-1/2 md:w-3/4 overflow-x-scroll overflow-y-hidden text-right'>
+            <p className='text-4xl md:text-5xl text-strong-cyan font-bold'>
+              ${avgTip != "" ? avgTip.toFixed(2) : "0.00"}
+            </p>
+          </div>
+        </div>
+        <div className='flex justify-between items-center mt-12 '>
+          <div className='w-1/2 md:w-1/4'>
+            <p className='text-white font-semibold'>Total</p>
+            <p className='text-dark-grayish-cyan-2 font-semibold text-sm'>
+              / person
+            </p>
+          </div>
+          <div className='w-1/2 md:w-3/4 overflow-x-scroll overflow-y-hidden text-right'>
+            <p className='text-4xl md:text-5xl text-strong-cyan font-bold'>
+              ${avgTotal != "" ? avgTotal.toFixed(2) : "0.00"}
+            </p>
+          </div>
+        </div>
+      </div>
+      <button
+        disabled={avgTotal != "" || avgTip != "" ? false : true}
+        onClick={() => {
+          setBill("");
+          setTip(0);
+          setPeople("");
+          setCustom(false);
+          setAvgTip("");
+          setAvgTotal("");
+        }}
+        className={`w-full mt-10 py-3 bg-strong-cyan rounded-md font-semibold text-very-dark-cyan focus:outline-none ${
+          avgTotal != "" || avgTip != "" ? "" : "bg-opacity-25 text-opacity-30"
+        }`}
+      >
+        RESET
+      </button>
+    </div>
+  );
+};
+
+export default ResultPanel;
