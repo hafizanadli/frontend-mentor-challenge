@@ -16,6 +16,11 @@
 }
 
 body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--verylightgray);
   font-family: "Lexend Deca", sans-serif;
 }
@@ -53,6 +58,16 @@ button {
   flex-direction: column;
 }
 
+.container--content {
+  max-width: 20rem;
+  padding: 2rem;
+}
+
+.container--content button:hover {
+  background-color: transparent;
+  color: var(--transparentwhite);
+}
+
 .container--content1 {
   border-radius: 0.5rem 0.5rem 0 0;
   background-color: var(--brightorange);
@@ -67,12 +82,6 @@ button {
   background-color: var(--verydarkcyan);
 }
 
-.container--content1,
-.container--content2,
-.container--content3 {
-  padding: 2rem;
-}
-
 .container--content1 button {
   color: var(--brightorange);
 }
@@ -84,11 +93,17 @@ button {
   color: var(--verydarkcyan);
 }
 
-.container--content1 button:hover,
-.container--content2 button:hover,
-.container--content3 button:hover {
-  background-color: transparent;
-  color: var(--transparentwhite);
+.attribution {
+  /* position: absolute;
+  bottom: 0; */
+  font-size: 11px;
+  text-align: center;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
 
 @media only screen and (min-width: 770px) {
@@ -98,7 +113,6 @@ button {
 
   .container {
     flex-direction: row;
-    /* margin: auto; */
   }
 
   .container--content1 {
@@ -107,22 +121,5 @@ button {
 
   .container--content3 {
     border-radius: 0 0.5rem 0.5rem 0;
-  }
-
-  .container--content1,
-  .container--content2,
-  .container--content3 {
-    max-width: 20rem;
-    min-width: 16rem;
-  }
-}
-
-@media only screen and (min-width: 770px) and (min-height: 600px) {
-  .container {
-    margin: 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 }
