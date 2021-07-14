@@ -1,0 +1,140 @@
+:root {
+  --darkcyan: hsl(185, 75%, 39%);
+  --verydarkblue: hsl(229, 23%, 23%);
+  --darkgrayishblue: hsl(227, 10%, 46%);
+  --darkgray: hsl(0, 0%, 59%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+p {
+  color: var(--darkgray);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--darkgray);
+}
+
+h1,
+h2,
+h2 {
+  color: var(--verydarkblue);
+}
+
+body {
+  background-color: var(--darkcyan);
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: url("./images/bg-pattern-bottom.svg") no-repeat top 15rem left
+      15rem,
+    url("./images/bg-pattern-top.svg") no-repeat top -30rem left -45rem;
+}
+
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 90%;
+  border-radius: 1rem;
+  max-width: 25rem;
+}
+
+.card__profile {
+  position: relative;
+}
+
+.profile__pict {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+  background-image: url("./images/image-victor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 100%;
+}
+
+.profile__bg {
+  width: 100%;
+  height: 9.3rem;
+}
+
+.profile__bg img {
+  border-radius: 1rem 1rem 0 0;
+  height: 100%;
+  width: 100%;
+}
+
+.profile__text {
+  height: 9.3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+}
+
+.profile__text-item {
+  text-align: center;
+}
+
+.profile__text-item p {
+  margin-top: 0.5rem;
+}
+
+.age {
+  color: var(--darkgrayishblue);
+  font-weight: 400;
+}
+
+.card__stats {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2rem 1rem;
+}
+
+.stats__item {
+  text-align: center;
+}
+
+.stats__item p {
+  font-size: small;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+  text-align: center;
+  color: black;
+  width: 100%;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    background: url("./images/bg-pattern-bottom.svg") no-repeat top 32rem right -15rem,
+      url("./images/bg-pattern-top.svg") no-repeat top -30rem right 45rem;
+  }
+}
