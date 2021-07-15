@@ -2,6 +2,7 @@ import React from "react";
 
 import IcDollar from "../assets/icon-dollar.svg";
 import IcPerson from "../assets/icon-person.svg";
+import ButtonTip from "./ButtonTip";
 
 const CalculationPanel = ({ state, dispatch }) => {
   React.useEffect(() => {
@@ -47,58 +48,19 @@ const CalculationPanel = ({ state, dispatch }) => {
       <div className='space-y-2'>
         <p className=' text-dark-grayish-cyan-1 font-bold'>Select Tip %</p>
         <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
-          <button
-            onClick={() => dispatch({ type: "setTip", value: 5 })}
-            className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              state.tip == 5 && !state.custom
-                ? "bg-strong-cyan text-very-dark-cyan"
-                : "bg-very-dark-cyan text-white"
-            }`}
-          >
-            5%
-          </button>
-          <button
-            onClick={() => dispatch({ type: "setTip", value: 10 })}
-            className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              state.tip == 10 && !state.custom
-                ? "bg-strong-cyan text-very-dark-cyan"
-                : "bg-very-dark-cyan text-white"
-            }`}
-          >
-            10%
-          </button>
-          <button
-            onClick={() => dispatch({ type: "setTip", value: 15 })}
-            className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              state.tip == 15 && !state.custom
-                ? "bg-strong-cyan text-very-dark-cyan"
-                : "bg-very-dark-cyan text-white"
-            }`}
-          >
-            15%
-          </button>
-          <button
-            onClick={() => dispatch({ type: "setTip", value: 25 })}
-            className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              state.tip == 25 && !state.custom
-                ? "bg-strong-cyan text-very-dark-cyan"
-                : "bg-very-dark-cyan text-white"
-            }`}
-          >
-            25%
-          </button>
-          <button
-            onClick={() => dispatch({ type: "setTip", value: 50 })}
-            className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              state.tip == 50 && !state.custom
-                ? "bg-strong-cyan text-very-dark-cyan"
-                : "bg-very-dark-cyan text-white"
-            }`}
-          >
-            50%
-          </button>
+          {[5, 10, 15, 25, 50].map((el) => (
+            <ButtonTip
+              key={el}
+              label={el}
+              value={el}
+              tip={state.tip}
+              custom={state.custom}
+              dispatch={dispatch}
+            />
+          ))}
           {state.custom ? (
             <input
+              autoFocus={true}
               onWheel={(event) => event.currentTarget.blur()}
               type='number'
               value={state.tip}
