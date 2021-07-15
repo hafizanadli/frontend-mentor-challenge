@@ -1,19 +1,6 @@
 import React from "react";
 
-const ResultPanel = ({
-  setAvgTotal,
-  setAvgTip,
-  avgTotal,
-  avgTip,
-  bill,
-  setBill,
-  tip,
-  setTip,
-  people,
-  setPeople,
-  custom,
-  setCustom,
-}) => {
+const ResultPanel = ({ state, dispatch }) => {
   return (
     <div className='bg-very-dark-cyan flex flex-col p-6 md:p10 justify-between rounded-2xl'>
       <div>
@@ -26,7 +13,7 @@ const ResultPanel = ({
           </div>
           <div className='w-1/2 md:w-3/4 overflow-x-scroll overflow-y-hidden text-right'>
             <p className='text-4xl md:text-5xl text-strong-cyan font-bold'>
-              ${avgTip != "" ? avgTip.toFixed(2) : "0.00"}
+              ${state.avgTip != "" ? state.avgTip.toFixed(2) : "0.00"}
             </p>
           </div>
         </div>
@@ -39,23 +26,20 @@ const ResultPanel = ({
           </div>
           <div className='w-1/2 md:w-3/4 overflow-x-scroll overflow-y-hidden text-right'>
             <p className='text-4xl md:text-5xl text-strong-cyan font-bold'>
-              ${avgTotal != "" ? avgTotal.toFixed(2) : "0.00"}
+              ${state.avgTotal != "" ? state.avgTotal.toFixed(2) : "0.00"}
             </p>
           </div>
         </div>
       </div>
       <button
-        disabled={avgTotal != "" || avgTip != "" ? false : true}
+        disabled={state.avgTotal != "" || state.avgTip != "" ? false : true}
         onClick={() => {
-          setBill("");
-          setTip(0);
-          setPeople("");
-          setCustom(false);
-          setAvgTip("");
-          setAvgTotal("");
+          dispatch({ type: "reset" });
         }}
         className={`w-full mt-10 py-3 bg-strong-cyan rounded-md font-semibold text-very-dark-cyan focus:outline-none ${
-          avgTotal != "" || avgTip != "" ? "" : "bg-opacity-25 text-opacity-30"
+          state.avgTotal != "" || state.avgTip != ""
+            ? ""
+            : "bg-opacity-25 text-opacity-30"
         }`}
       >
         RESET

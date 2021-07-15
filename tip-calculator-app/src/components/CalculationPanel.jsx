@@ -3,34 +3,24 @@ import React from "react";
 import IcDollar from "../assets/icon-dollar.svg";
 import IcPerson from "../assets/icon-person.svg";
 
-const CalculationPanel = ({
-  setAvgTotal,
-  setAvgTip,
-  bill,
-  setBill,
-  tip,
-  setTip,
-  people,
-  setPeople,
-  custom,
-  setCustom,
-}) => {
-  const calculateTotal = React.useMemo(() => {
-    return (
-      (parseFloat(bill) + (parseFloat(bill) * parseFloat(tip)) / 100) / people
-    );
-  }, [bill, tip, people]);
-
-  const calculateTip = React.useMemo(() => {
-    return (bill * tip) / 100 / people;
-  }, [bill, tip, people]);
-
+const CalculationPanel = ({ state, dispatch }) => {
   React.useEffect(() => {
-    if (bill != "" && tip != 0 && people != "" && people != 0) {
-      setAvgTotal(calculateTotal);
-      setAvgTip(calculateTip);
+    if (
+      state.bill != "" &&
+      state.tip != 0 &&
+      state.people != "" &&
+      state.people != 0
+    ) {
+      dispatch({ type: "totalPerPerson" });
+      dispatch({ type: "tipPerPerson" });
     }
-  }, [bill, tip, people, calculateTip, calculateTotal]);
+  }, [
+    state.bill,
+    state.tip,
+    state.people,
+    state.calculateTip,
+    state.calculateTotal,
+  ]);
 
   return (
     <div className='bg-white flex flex-col space-y-12'>
@@ -45,8 +35,10 @@ const CalculationPanel = ({
           <input
             onWheel={(event) => event.currentTarget.blur()}
             type='number'
-            value={bill}
-            onChange={(e) => setBill(e.target.value)}
+            value={state.bill}
+            onChange={(e) =>
+              dispatch({ type: "setBill", value: e.target.value })
+            }
             placeholder='0'
             className=' bg-light-grayish-cyan-2 w-full h-14 rounded-md focus:outline-none p-5 text-right text-very-dark-cyan font-bold text-2xl focus:ring-2 focus:ring-strong-cyan'
           />
@@ -56,12 +48,9 @@ const CalculationPanel = ({
         <p className=' text-dark-grayish-cyan-1 font-bold'>Select Tip %</p>
         <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
           <button
-            onClick={() => {
-              setCustom(false);
-              setTip(5);
-            }}
+            onClick={() => dispatch({ type: "setTip", value: 5 })}
             className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              tip == 5 && !custom
+              state.tip == 5 && !state.custom
                 ? "bg-strong-cyan text-very-dark-cyan"
                 : "bg-very-dark-cyan text-white"
             }`}
@@ -69,12 +58,9 @@ const CalculationPanel = ({
             5%
           </button>
           <button
-            onClick={() => {
-              setCustom(false);
-              setTip(10);
-            }}
+            onClick={() => dispatch({ type: "setTip", value: 10 })}
             className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              tip == 10 && !custom
+              state.tip == 10 && !state.custom
                 ? "bg-strong-cyan text-very-dark-cyan"
                 : "bg-very-dark-cyan text-white"
             }`}
@@ -82,12 +68,9 @@ const CalculationPanel = ({
             10%
           </button>
           <button
-            onClick={() => {
-              setCustom(false);
-              setTip(15);
-            }}
+            onClick={() => dispatch({ type: "setTip", value: 15 })}
             className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              tip == 15 && !custom
+              state.tip == 15 && !state.custom
                 ? "bg-strong-cyan text-very-dark-cyan"
                 : "bg-very-dark-cyan text-white"
             }`}
@@ -95,12 +78,9 @@ const CalculationPanel = ({
             15%
           </button>
           <button
-            onClick={() => {
-              setCustom(false);
-              setTip(25);
-            }}
+            onClick={() => dispatch({ type: "setTip", value: 25 })}
             className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              tip == 25 && !custom
+              state.tip == 25 && !state.custom
                 ? "bg-strong-cyan text-very-dark-cyan"
                 : "bg-very-dark-cyan text-white"
             }`}
@@ -108,30 +88,29 @@ const CalculationPanel = ({
             25%
           </button>
           <button
-            onClick={() => {
-              setCustom(false);
-              setTip(50);
-            }}
+            onClick={() => dispatch({ type: "setTip", value: 50 })}
             className={`hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan font-bold rounded-md py-2 text-2xl ${
-              tip == 50 && !custom
+              state.tip == 50 && !state.custom
                 ? "bg-strong-cyan text-very-dark-cyan"
                 : "bg-very-dark-cyan text-white"
             }`}
           >
             50%
           </button>
-          {custom ? (
+          {state.custom ? (
             <input
               onWheel={(event) => event.currentTarget.blur()}
               type='number'
-              value={tip}
-              onChange={(e) => setTip(e.target.value)}
+              value={state.tip}
+              onChange={(e) =>
+                dispatch({ type: "setTipCustom", value: e.target.value })
+              }
               placeholder='0'
               className=' bg-light-grayish-cyan-2 w-full h-12 rounded-md focus:outline-none p-5 text-right text-very-dark-cyan font-bold text-2xl focus:ring-2 focus:ring-strong-cyan'
             />
           ) : (
             <button
-              onClick={() => setCustom(true)}
+              onClick={() => dispatch({ type: "setCustom", value: true })}
               className='bg-light-grayish-cyan-2 text-dark-grayish-cyan-1 rounded-md font-bold  py-2 text-2xl hover:bg-strong-cyan hover:bg-opacity-50 hover:text-very-dark-cyan'
             >
               Custom
@@ -144,7 +123,7 @@ const CalculationPanel = ({
           <p className=' text-dark-grayish-cyan-1 font-bold'>
             Number of People
           </p>
-          {people != "" && people == 0 ? (
+          {state.people != "" && state.people == 0 ? (
             <p className='text-pastel-red font-bold'>Can't be zero</p>
           ) : null}
         </div>
@@ -156,12 +135,14 @@ const CalculationPanel = ({
           </span>
           <input
             type='number'
-            value={people}
-            onChange={(e) => setPeople(e.target.value)}
+            value={state.people}
+            onChange={(e) =>
+              dispatch({ type: "setPeople", value: e.target.value })
+            }
             placeholder='0'
             className={`focus:ring-2 focus:ring-strong-cyan bg-light-grayish-cyan-2 w-full h-14 rounded-md focus:outline-none p-5 text-right text-very-dark-cyan font-bold text-2xl 
             ${
-              people != "" && people == 0
+              state.people != "" && state.people == 0
                 ? "ring-2 ring-pastel-red focus:pastel-red focus:ring-pastel-red"
                 : ""
             }
