@@ -1,7 +1,7 @@
 import IcScissors from "../assets/icon-scissors.svg";
 import IcRock from "../assets/icon-rock.svg";
 import IcPaper from "../assets/icon-paper.svg";
-import IcLizard from "../assets/icon-lizard.svg";
+import IcLizzard from "../assets/icon-lizard.svg";
 import IcSpock from "../assets/icon-spock.svg";
 
 export const item = {
@@ -28,7 +28,7 @@ export const item = {
   },
   lizzard: {
     name: "lizzard",
-    icon: IcLizard,
+    icon: IcLizzard,
     fillStr: "from-purple-2 to-purple-1",
     positionStr:
       "bottom-0 left-0 transform translate-x-1/4 lg:translate-y-1/2 lg:-translate-x-1/4",
