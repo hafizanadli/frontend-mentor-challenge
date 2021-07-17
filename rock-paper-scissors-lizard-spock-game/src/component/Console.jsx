@@ -42,9 +42,9 @@ const Console = () => {
         </div>
       ) : (
         <div className='relative flex w-full justify-evenly items-start lg:items-center  h-3/4 lg:h-auto'>
-          <div className='flex flex-col lg:flex-col-reverse space-y-5 lg:space-y-16 lg:space-y-reverse items-center'>
+          <div className='relative flex flex-col lg:flex-col-reverse space-y-5 lg:space-y-16 lg:space-y-reverse items-center'>
             <div
-              className={`flex items-center justify-center w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-gradient-to-b ${item[playerPick]["fillStr"]}`}
+              className={`flex items-center justify-center w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-gradient-to-b ${item[playerPick]["fillStr"]} z-50`}
             >
               <div className='flex items-center justify-center w-3/4 h-3/4 rounded-full bg-white border-t-6 border-gray-300'>
                 <img
@@ -57,9 +57,12 @@ const Console = () => {
             <p className='text-white text-sm lg:text-2xl font-bold'>
               YOU PICKED
             </p>
+            {showResult && status === "YOU WIN" && (
+              <div className='-top-5 lg:top-auto lg:-bottom-16 absolute bg-screen-1 rounded-full w-32 h-32 lg:w-64 lg:h-64 animate-ping' />
+            )}
           </div>
           {showResult && (
-            <div className='absolute lg:static left-1/2 top-2/3 transform -translate-x-1/2 lg:transform-none space-y-3'>
+            <div className='absolute lg:static left-1/2 top-2/3 transform -translate-x-1/2 lg:transform-none space-y-3 z-50'>
               <p className=' text-6xl whitespace-nowrap font-semibold text-white'>
                 {status}
               </p>
@@ -72,9 +75,9 @@ const Console = () => {
             </div>
           )}
           {botPick != "" ? (
-            <div className='flex flex-col lg:flex-col-reverse space-y-5 lg:space-y-16 lg:space-y-reverse items-center'>
+            <div className='relative flex flex-col lg:flex-col-reverse space-y-5 lg:space-y-16 lg:space-y-reverse items-center'>
               <div
-                className={`flex items-center justify-center w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-gradient-to-b ${item[botPick]["fillStr"]}`}
+                className={`flex items-center justify-center w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-gradient-to-b ${item[botPick]["fillStr"]} z-50`}
               >
                 <div className='flex items-center justify-center w-3/4 h-3/4 rounded-full bg-white border-t-6 border-gray-300'>
                   <img
@@ -87,6 +90,9 @@ const Console = () => {
               <p className='text-white text-sm lg:text-2xl font-bold'>
                 THE HOUSE PICKED
               </p>
+              {showResult && status === "YOU LOSE" && (
+                <div className='-top-5 lg:top-auto lg:-bottom-16 absolute bg-screen-1 rounded-full w-32 h-32 lg:w-64 lg:h-64 animate-ping' />
+              )}
             </div>
           ) : (
             <div className='flex flex-col lg:flex-col-reverse space-y-5 lg:space-y-16 lg:space-y-reverse items-center'>
