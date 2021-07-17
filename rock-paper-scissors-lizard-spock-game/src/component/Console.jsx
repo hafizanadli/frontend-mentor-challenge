@@ -8,8 +8,15 @@ import ItemButton from "./ItemButton";
 import { item } from "../constant/constant";
 
 const Console = () => {
-  const { play, handlePick, handleReset, playerPick, botPick } =
-    React.useContext(AppContext);
+  const {
+    play,
+    handlePick,
+    handleReset,
+    playerPick,
+    botPick,
+    status,
+    showResult,
+  } = React.useContext(AppContext);
 
   return (
     <div className='w-full lg:w-3/4 h-full flex flex-col justify-start lg:justify-center '>
@@ -51,21 +58,23 @@ const Console = () => {
               YOU PICKED
             </p>
           </div>
-          <div className='absolute lg:static left-1/2 top-2/3 transform -translate-x-1/2 lg:transform-none space-y-3'>
-            <p className=' text-6xl whitespace-nowrap font-semibold text-white'>
-              YOU WIN
-            </p>
-            <button
-              onClick={() => handleReset()}
-              className='bg-white rounded-lg p-4 w-full'
-            >
-              PLAY AGAIN
-            </button>
-          </div>
+          {showResult && (
+            <div className='absolute lg:static left-1/2 top-2/3 transform -translate-x-1/2 lg:transform-none space-y-3'>
+              <p className=' text-6xl whitespace-nowrap font-semibold text-white'>
+                {status}
+              </p>
+              <button
+                onClick={() => handleReset()}
+                className='bg-white rounded-lg p-4 w-full'
+              >
+                PLAY AGAIN
+              </button>
+            </div>
+          )}
           {botPick != "" ? (
             <div className='flex flex-col lg:flex-col-reverse space-y-5 lg:space-y-16 lg:space-y-reverse items-center'>
               <div
-                className={`flex items-center justify-center w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-gradient-to-b ${item[playerPick]["fillStr"]}`}
+                className={`flex items-center justify-center w-32 h-32 lg:w-64 lg:h-64 rounded-full bg-gradient-to-b ${item[botPick]["fillStr"]}`}
               >
                 <div className='flex items-center justify-center w-3/4 h-3/4 rounded-full bg-white border-t-6 border-gray-300'>
                   <img
