@@ -4,13 +4,11 @@ import IcLogo from "../assets/logo.svg";
 
 const Section1 = () => {
   return (
-    <div className='flex flex-col justify-center items-center space-y-12 my-24 '>
+    <div className='flex flex-col justify-center items-center space-y-12'>
       <img src={IcLogo} alt='logo' className='my-3' />
       <div className='space-y-6  flex flex-col items-center'>
-        <p className='text-3xl md:text-5xl font-semibold text-dark-grayish text-center'>
-          A history of everything you copy
-        </p>
-        <p className='text-base md:text-lg font-semibold text-grayish-blue text-center max-w-2xl'>
+        <h1>A history of everything you copy</h1>
+        <p className='text-base md:text-lg font-semibold max-w-2xl'>
           Clipboard allows you to track and organize everything you copy.
           Instantly access your clipboard on all your device
         </p>

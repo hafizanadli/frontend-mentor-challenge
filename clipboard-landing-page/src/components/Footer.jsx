@@ -7,7 +7,7 @@ import IcLogo from "../assets/logo.svg";
 
 const Footer = () => {
   return (
-    <div className='flex flex-col items-center w-full bg-grayish-blue bg-opacity-10 '>
+    <div className='flex flex-col items-center w-full bg-grayish-blue bg-opacity-10'>
       <div className='max-w-7xl flex flex-col md:flex-row items-center justify-around w-full px-5 my-10 space-y-10 md:space-y-0'>
         <div className='w-full flex justify-center md:justify-start md:w-1/6'>
           <img src={IcLogo} alt='Logo' className='w-14 md:w-16' />
