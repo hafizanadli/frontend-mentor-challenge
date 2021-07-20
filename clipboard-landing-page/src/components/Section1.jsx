@@ -4,7 +4,7 @@ import IcLogo from "../assets/logo.svg";
 
 const Section1 = () => {
   return (
-    <div className='flex flex-col justify-center items-center space-y-12'>
+    <div className='flex flex-col justify-center items-center space-y-12 '>
       <img src={IcLogo} alt='logo' className='my-3' />
       <div className='space-y-6  flex flex-col items-center'>
         <h1>A history of everything you copy</h1>
