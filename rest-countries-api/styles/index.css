@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  p,
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-very-dark-blue-txt dark:text-white-app;
+  }
+
+  h2 {
+    @apply text-2xl font-extrabold;
+  }
+
+  h3 {
+    @apply text-xl font-extrabold;
+  }
+
+  body {
+    @apply bg-very-light-gray dark:bg-very-dark-blue-bg;
+  }
+}
+
+@layer utilities {
+  .bg-element-responsive {
+    @apply bg-white-app dark:bg-dark-blue;
+  }
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
