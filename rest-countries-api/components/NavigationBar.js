@@ -12,7 +12,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <header className='bg-element-responsive w-full px-20 py-6 flex justify-between shadow-md'>
+    <header className='bg-element-responsive w-full px-5 lg:px-20 py-6 flex justify-between shadow-md'>
       <h2>Where in the world?</h2>
       <button onClick={handleDark} className='flex items-center space-x-2'>
         <svg

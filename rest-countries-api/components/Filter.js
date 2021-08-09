@@ -2,11 +2,9 @@ import React, { useRef, useState } from "react";
 
 const Filter = ({ getCountryByRegion, setCountryList, allCountryRef }) => {
   const searchRef = useRef(null);
-  const selectRef = useRef(null);
   const timeoutRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-
-  console.log(selectRef && selectRef.current && selectRef.current.offsetWidth);
+  const [region, setRegion] = useState(null);
 
   React.useEffect(() => {
     searchRef.current.addEventListener("keyup", function (e) {
@@ -24,8 +22,8 @@ const Filter = ({ getCountryByRegion, setCountryList, allCountryRef }) => {
   }, []);
 
   return (
-    <div className='z-50 flex items-center justify-between'>
-      <div className='px-4 py-2 bg-element-responsive text-very-dark-blue-txt dark:text-white-app shadow-lg flex rounded-md'>
+    <div className='relative flex flex-col lg:flex-row items-start lg:items-center justify-between space-y-10 lg:space-y-0'>
+      <div className='px-4 py-2 bg-element-responsive text-very-dark-blue-txt dark:text-white-app shadow-lg flex rounded-md w-full lg:w-auto'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
           className='h-5 w-5 fill-current text-very-dark-blue-txt dark:text-white-app'
@@ -45,14 +43,13 @@ const Filter = ({ getCountryByRegion, setCountryList, allCountryRef }) => {
           className='pl-5 bg-element-responsive focus:outline-none'
         />
       </div>
-      <div className='relative'>
+      <div className='z-50 relative'>
         <button
           onClick={() => setIsOpen((prev) => !prev)}
-          className='flex justify-center px-4 py-2 bg-element-responsive rounded-md shadow-lg'
+          className='flex justify-between px-4 py-2 bg-element-responsive rounded-md shadow-lg w-52'
           type='button'
-          ref={selectRef}
         >
-          <p>Filter by Region</p>
+          <p>{region ? region : "Filter by Region"}</p>
           <svg
             className='w-5 h-5 ml-2 -mr-1 fill-current text-very-dark-blue-bg dark:text-very-light-gray '
             viewBox='0 0 20 20'
@@ -70,7 +67,7 @@ const Filter = ({ getCountryByRegion, setCountryList, allCountryRef }) => {
             isOpen
               ? "opacity-1 visible select-open"
               : "opacity-0 invisible select-close"
-          } transition-all duration-300 w-[166px] select mt-2 divide-y divide-gray-100 rounded-md outline-none bg-element-responsive transform -translate-y-1 shadow-lg`}
+          } transition-all duration-300 w-52 select mt-2 divide-y divide-gray-100 rounded-md outline-none bg-element-responsive transform -translate-y-1 shadow-lg`}
           role='menu'
         >
           <div className='px-4 py-2 flex flex-col'>
@@ -82,7 +79,11 @@ const Filter = ({ getCountryByRegion, setCountryList, allCountryRef }) => {
               { label: "Oceania", value: "oceania" },
             ].map((el) => (
               <button
-                onClick={() => getCountryByRegion({ regionCode: el.value })}
+                onClick={() => {
+                  setRegion(el.label);
+                  getCountryByRegion({ regionCode: el.value });
+                  setIsOpen(false);
+                }}
                 key={el.value}
                 className='hover:bg-dark-blue/25 rounded-sm'
               >

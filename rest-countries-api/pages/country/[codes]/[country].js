@@ -27,7 +27,7 @@ const Country = () => {
   }, [router.query.codes]);
 
   return (
-    <div className='flex-1 flex flex-col w-full px-20 mt-16 space-y-20'>
+    <div className='flex-1 flex flex-col w-full px-5 lg:px-20 my-16 space-y-20 '>
       <div>
         <button
           onClick={() => router.back()}
@@ -47,9 +47,9 @@ const Country = () => {
           <p>Back</p>
         </button>
       </div>
-      <div className='flex space-x-10'>
-        <div className='w-1/2'>
-          <div className='relative h-96 w-10/12'>
+      <div className='flex flex-col md:flex-row space-x-0 md:space-x-10 space-y-10 md:space-y-10'>
+        <div className='w-full md:w-1/2'>
+          <div className='relative h-64 md:h-96 w-full md:w-10/12'>
             {detail ? (
               <Image
                 alt='country'
@@ -61,9 +61,9 @@ const Country = () => {
             ) : null}
           </div>
         </div>
-        <div className='flex flex-col justify-evenly'>
+        <div className='flex flex-col justify-evenly space-y-6 md:space-y-0'>
           <h1>{detail && detail.name}</h1>
-          <div className='flex'>
+          <div className='flex flex-col md:flex-row space-y-6 md:space-y-0'>
             <div>
               <p className='mb-2'>
                 <span className='font-semibold'>Native Name:</span>{" "}
@@ -87,6 +87,10 @@ const Country = () => {
               </p>
             </div>
             <div>
+              <p className='mb-2'>
+                <span className='font-semibold'>Top Level Domain:</span>{" "}
+                {detail && detail.topLevelDomain}
+              </p>
               <p className='mb-2'>
                 <span className='font-semibold'>Currencies:</span>{" "}
                 {detail &&
