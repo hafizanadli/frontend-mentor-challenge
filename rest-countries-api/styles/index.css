@@ -11,6 +11,10 @@
     @apply text-very-dark-blue-txt dark:text-white-app;
   }
 
+  h1 {
+    @apply text-3xl font-extrabold;
+  }
+
   h2 {
     @apply text-2xl font-extrabold;
   }
