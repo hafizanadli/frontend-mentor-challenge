@@ -38,7 +38,7 @@ export default function Home({ countryData }) {
   return (
     <div className='flex-1 flex flex-col w-full px-5 lg:px-20 my-16 space-y-16'>
       <Head>
-        <title>Create Next App</title>
+        <title>Rest Country Api App</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
 

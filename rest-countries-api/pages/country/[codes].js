@@ -49,6 +49,10 @@ const Country = () => {
 
   return (
     <div className='flex-1 flex flex-col w-full px-5 lg:px-20 my-16 space-y-20 '>
+      <Head>
+        <title>Rest Country Api App</title>
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <div>
         <button
           onClick={() => router.back()}
