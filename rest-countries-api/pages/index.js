@@ -22,6 +22,8 @@ export default function Home({ countryData }) {
   const allCountryRef = useRef(countryData);
   const [countryList, setCountryList] = useState(countryData);
 
+  console.log(countryList);
+
   const getCountryByRegion = useCallback(async ({ regionCode }) => {
     const res = await fetch(
       "https://restcountries.eu/rest/v2/region/" + regionCode,
@@ -50,7 +52,7 @@ export default function Home({ countryData }) {
         {countryList.map((el) => (
           <CountryCard
             key={el.alpha3Code}
-            callingCodes={el.callingCodes}
+            callingCodes={el.alpha3Code}
             capital={el.capital}
             countryName={el.name}
             flagImg={el.flag}

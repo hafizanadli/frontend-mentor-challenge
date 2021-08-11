@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-
 const CountryCard = ({
   countryName,
   flagImg,
@@ -10,12 +9,11 @@ const CountryCard = ({
   region,
   callingCodes,
 }) => {
-
   return (
     <Link
       href={{
-        pathname: "/country/[codes]/[country]",
-        query: { codes: callingCodes, country: countryName },
+        pathname: "/country/[codes]",
+        query: { codes: callingCodes },
       }}
     >
       <div className='text-left rounded-lg bg-element-responsive shadow-lg'>
