@@ -11,6 +11,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap'
             rel='stylesheet'
           ></link>
+          <title>Rest Countries Api</title>
         </Head>
         <body>
           <Main />
