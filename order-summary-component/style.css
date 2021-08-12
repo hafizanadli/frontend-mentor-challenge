@@ -1,0 +1,149 @@
+:root {
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 52%);
+  --brightBlueShadow: hsl(245, 75%, 52%, 25%);
+  --veryPaleBlue: hsl(225, 100%, 98%);
+  --desaturatedBlue: hsl(224, 23%, 55%);
+  --darkBlue: hsl(223, 47%, 23%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url("./images/pattern-background-desktop.svg") no-repeat;
+  background-color: var(--paleBlue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.main {
+  margin: 1rem;
+  background-color: white;
+  border-radius: 1.5rem;
+  max-width: 25rem;
+}
+
+.main--header {
+  height: 13.5rem;
+  background-image: url("./images/illustration-hero.svg");
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.main--content {
+  text-align: center;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main--content > h1 {
+  margin: 1rem 0;
+  font-weight: 900;
+}
+
+.main--content > p {
+  margin: 1rem 0;
+  font-weight: 700;
+  color: var(--desaturatedBlue);
+  width: 85%;
+  line-height: 1.7rem;
+}
+
+.main--plan {
+  width: 100%;
+  background-color: var(--veryPaleBlue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.5rem;
+  margin: 1rem 0;
+}
+
+.main--plan > p {
+  color: var(--brightBlue);
+  font-weight: 900;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.plan--content {
+  display: flex;
+  align-items: center;
+}
+
+.plan--icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--paleBlue);
+  border-radius: 2rem;
+}
+
+.plan--text {
+  margin-left: 1rem;
+}
+
+.text--title {
+  font-weight: 900;
+}
+
+.text--price {
+  color: var(--desaturatedBlue);
+}
+
+.btn {
+  display: block;
+  border: none;
+  background: none;
+  margin: 1rem 0;
+}
+
+.btn--proceed {
+  background-color: var(--brightBlue);
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  font-weight: 900;
+  box-shadow: 0 15px 2rem var(--brightBlueShadow);
+}
+
+.btn--proceed:hover {
+  cursor: pointer;
+  opacity: 80%;
+}
+
+.btn--cancel {
+  font-weight: 900;
+  color: var(--desaturatedBlue);
+}
+
+.btn--cancel:hover {
+  cursor: pointer;
+  color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .main--content {
+    padding: 1.5rem;
+  }
+  .main--plan {
+    padding: 1.2rem 1rem;
+  }
+  .main--plan > p {
+    font-size: 12px;
+  }
+  .plan--text {
+    font-size: 14px;
+  }
+}
