@@ -14,13 +14,18 @@
 }
 
 body {
-  background: url("./images/pattern-background-desktop.svg") no-repeat center top;
   background-color: var(--paleBlue);
+  font-family: "Red Hat Display", sans-serif;
+}
+
+.container {
+  background: url("./images/pattern-background-desktop.svg") no-repeat;
+  background-size: contain;
+  width: 100vw;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Red Hat Display", sans-serif;
 }
 
 .main {
