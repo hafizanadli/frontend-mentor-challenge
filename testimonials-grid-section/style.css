@@ -1,0 +1,142 @@
+:root {
+  --moderateViolet: hsl(263, 55%, 52%);
+  --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+  --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%, 85%);
+  --lightGray: hsl(0, 0%, 81%);
+  --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  font-size: 13px;
+  opacity: 70%;
+}
+
+img {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 2.2rem;
+}
+
+body {
+  background-color: var(--lightGrayishBlue);
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+main {
+  margin: 3rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "daniel"
+    "jonathan"
+    "jeanette"
+    "patrick"
+    "kira";
+  grid-gap: 1rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+  gap: 1rem;
+  box-shadow: 1rem 1rem 2rem -0.5rem hsl(217, 19%, 35%, 30%);
+}
+
+.item1 {
+  background: url("./images/bg-pattern-quotation.svg") no-repeat 85% 0%;
+}
+
+.item--testimony {
+  line-height: 1.5rem;
+}
+
+.item--profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item1 .item--name,
+.item2 .item--name,
+.item4 .item--name,
+.item1 .item--graduate,
+.item2 .item--graduate,
+.item4 .item--graduate,
+.item1 .item--testimony,
+.item2 .item--testimony,
+.item4 .item--testimony,
+.item1 .item--title,
+.item2 .item--title,
+.item4 .item--title {
+  color: var(--white);
+}
+
+.item3 .item--name,
+.item5 .item--name,
+.item3 .item--graduate,
+.item5 .item--graduate,
+.item3 .item--testimony,
+.item5 .item--testimony,
+.item3 .item--title,
+.item5 .item--title {
+  color: var(--veryDarkGrayishBlue);
+}
+
+.item1 {
+  background-color: var(--moderateViolet);
+  grid-area: daniel;
+}
+.item2 {
+  background-color: var(--veryDarkGrayishBlue);
+  grid-area: jonathan;
+}
+.item3 {
+  background-color: var(--white);
+  grid-area: jeanette;
+}
+.item4 {
+  background-color: var(--veryDarkBlackishBlue);
+  grid-area: patrick;
+}
+.item5 {
+  background-color: var(--white);
+  grid-area: kira;
+}
+
+@media only screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-areas:
+      "daniel daniel jonathan"
+      "jeanette patrick patrick"
+      "kira kira kira";
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  main {
+    margin: 0 1rem;
+  }
+  .grid-container {
+    max-width: 1110px;
+    grid-template-areas:
+      "daniel daniel daniel daniel jonathan kira"
+      "jeanette patrick patrick patrick patrick kira";
+  }
+}
