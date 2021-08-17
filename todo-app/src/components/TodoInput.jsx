@@ -17,8 +17,8 @@ const TodoInput = ({ setTodoList }) => {
   }, []);
 
   return (
-    <div className='custom-bg shadow-lg rounded-md px-8 py-5 flex items-center space-x-5'>
-      <p className=''>button</p>
+    <div className='custom-bg shadow-lg rounded-md px-6 py-5 flex items-center space-x-5'>
+      <div className='w-9 h-9 border-2 border-gray-300 rounded-full' />
       <input
         ref={inputRef}
         className={"focus:outline-none"}
