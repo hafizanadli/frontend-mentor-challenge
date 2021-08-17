@@ -1,45 +1,49 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+
+import bgDesktopDark from "./assets/bg-desktop-dark.jpg";
+import bgDesktopLight from "./assets/bg-desktop-light.jpg";
+import Header from "./components/Header";
+import Todo from "./components/Todo";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [bgHeader, setBgHeader] = useState(
+    window.localStorage.getItem("theme") === "dark"
+      ? bgDesktopDark
+      : bgDesktopLight
+  );
+
+  useEffect(() => {
+    if (window.localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body.style.backgroundColor = "hsl(235, 21%, 11%)";
+      setBgHeader(bgDesktopDark);
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.body.style.backgroundColor = "hsl(0, 0%, 98%)";
+      setBgHeader(bgDesktopLight);
+    }
+  }, []);
+
+  const handleDark = () => {
+    if (window.localStorage.getItem("theme") === "light") {
+      window.localStorage.setItem("theme", "dark");
+      document.documentElement.classList.add("dark");
+      document.body.style.backgroundColor = "hsl(235, 21%, 11%)";
+      setBgHeader(bgDesktopDark);
+    } else {
+      window.localStorage.setItem("theme", "light");
+      document.documentElement.classList.remove("dark");
+      document.body.style.backgroundColor = "hsl(0, 0%, 98%)";
+      setBgHeader(bgDesktopLight);
+    }
+  };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+    <div className='relative min-h-screen flex justify-center items-center'>
+      <Header bgHeader={bgHeader} />
+      <Todo handleDark={handleDark} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

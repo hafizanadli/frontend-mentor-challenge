@@ -1,9 +1,15 @@
 module.exports = {
   purge: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   mode: "jit",
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
+      backgroundImage: (theme) => ({
+        "header-desktop-dark": "url('./assets/bg-desktop-dark.jpg')",
+        "header-mobile-dark": "url('./assets/bg-mobile-dark.jpg')",
+        "header-desktop-light": "url('./assets/bg-desktop-light.jpg')",
+        "header-mobile-light": "url('./assets/bg-mobile-light.jpg')",
+      }),
       colors: {
         // ### Primary
 
@@ -18,8 +24,8 @@ module.exports = {
         veryLightGray: "hsl(0, 0%, 98%)",
         veryLightGrayishBlue: "hsl(236, 33%, 92%)",
         lightGrayishBlue: "hsl(233, 11%, 84%)",
-        darkGrayishBlue: "hsl(236, 9%, 61%)",
-        veryDarkGrayishBlue: "hsl(235, 19%, 35%)",
+        // darkGrayishBlue: "hsl(236, 9%, 61%)",
+        // veryDarkGrayishBlue: "hsl(235, 19%, 35%)",
 
         // ### Dark Theme
 
@@ -29,7 +35,7 @@ module.exports = {
         lightGrayishBlueHover: "hsl(236, 33%, 92%)",
         darkGrayishBlue: "hsl(234, 11%, 52%)",
         veryDarkGrayishBlue: "hsl(233, 14%, 35%)",
-        veryDarkGrayishBlue: "hsl(237, 14%, 26%)",
+        // veryDarkGrayishBlue: "hsl(237, 14%, 26%)",
       },
     },
   },
