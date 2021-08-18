@@ -45,7 +45,7 @@ const showedList = ({
               el.status ? "line-through opacity-30" : ""
             }`}
           >
-            {el.label}
+            <p>{el.label}</p>
           </div>
           <div onClick={() => handleRemove(el.id)} className='cursor-pointer'>
             <img src={RemoveIcon} alt='check icon' className='w-5 h-5' />
@@ -54,16 +54,18 @@ const showedList = ({
       ))}
       <div className='px-6 py-4 flex items-center justify-between'>
         <div className='text-sm'>
-          {showedList.filter((el) => el.status === false).length} items left
+          <p>
+            {showedList.filter((el) => el.status === false).length} items left
+          </p>
         </div>
-        <div className='flex-1 hidden md:block'>
+        <div className='flex-1 hidden md:block '>
           <FilterSelector filter={filter} setFilter={setFilter} />
         </div>
         <div
           className='text-sm cursor-pointer hover:text-black dark:hover:text-white'
           onClick={handleClearCompleted}
         >
-          Clear Completed
+          <p>Clear Completed</p>
         </div>
       </div>
     </div>

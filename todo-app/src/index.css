@@ -2,7 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
 @layer base {
+  p {
+    @apply pt-1;
+  }
   div {
     @apply dark:text-gray-300 text-gray-500 font-semibold;
   }
@@ -15,18 +26,4 @@
   .custom-bg {
     @apply bg-white dark:bg-veryDarkDesaturatedBlue;
   }
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
