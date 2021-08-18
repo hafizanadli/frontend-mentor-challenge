@@ -11,7 +11,7 @@ const ResultPanel = ({ state, dispatch }) => {
               / person
             </p>
           </div>
-          <div className='w-1/2 md:w-3/4 overflow-x-scroll overflow-y-hidden text-right'>
+          <div className='w-1/2 md:w-3/4 overflow-x-hidden overflow-y-hidden text-right'>
             <p className='text-4xl md:text-5xl text-strong-cyan font-bold'>
               ${state.avgTip != "" ? state.avgTip.toFixed(2) : "0.00"}
             </p>
@@ -24,7 +24,7 @@ const ResultPanel = ({ state, dispatch }) => {
               / person
             </p>
           </div>
-          <div className='w-1/2 md:w-3/4 overflow-x-scroll overflow-y-hidden text-right'>
+          <div className='w-1/2 md:w-3/4 overflow-x-hidden overflow-y-hidden text-right'>
             <p className='text-4xl md:text-5xl text-strong-cyan font-bold'>
               ${state.avgTotal != "" ? state.avgTotal.toFixed(2) : "0.00"}
             </p>

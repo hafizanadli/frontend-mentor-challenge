@@ -72,7 +72,6 @@ const App = () => {
 
   return (
     <main className='min-h-screen flex flex-col justify-center items-center bg-light-grayish-cyan-1'>
-      <button onClick={() => dispatch({ type: "reset" })}>test</button>
       <div className='w-full flex flex-col items-center space-y-16'>
         <div className='space-y-2 mt-16 md:mt-0'>
           <p className='text-2xl font-bold text-very-dark-cyan tracking-widest'>
