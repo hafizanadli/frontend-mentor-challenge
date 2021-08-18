@@ -17,11 +17,11 @@ const TodoInput = ({ setTodoList }) => {
   }, []);
 
   return (
-    <div className='custom-bg shadow-lg rounded-md px-6 py-5 flex items-center space-x-5'>
-      <div className='w-9 h-9 border-2 border-gray-300 rounded-full' />
+    <div className='custom-bg shadow-lg rounded-md px-6 py-5 flex items-center space-x-5 transition-colors'>
+      <div className='w-9 h-9 border-2 border-gray-300 dark:border-gray-500 rounded-full' />
       <input
         ref={inputRef}
-        className={"focus:outline-none"}
+        className={"focus:outline-none w-full custom-bg flex-1 font-semibold transition-colors"}
         placeholder='Create a new todo'
       />
     </div>
