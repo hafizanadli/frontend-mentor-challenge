@@ -4,7 +4,7 @@
 
 @layer base {
   div {
-    @apply dark:text-white text-black;
+    @apply dark:text-gray-300 text-gray-500 font-semibold;
   }
   h1 {
     @apply text-4xl tracking-widest text-white;
