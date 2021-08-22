@@ -37,7 +37,7 @@ const Section2 = () => {
           hub. Control your finances like never before.
         </p>
       </section>
-      <section className='flex flex-col md:flex-row space-y-8 md:space-y-0 space-x-0 md:space-x-10'>
+      <section className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4'>
         {list.map((el, index) => (
           <div
             className='space-y-5 md:space-y-8 flex flex-col items-center md:items-start text-center md:text-left'

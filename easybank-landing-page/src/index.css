@@ -12,6 +12,9 @@
   h3 {
     @apply text-xl md:text-2xl text-darkBlue;
   }
+  h4 {
+    @apply text-lg md:text-xl text-darkBlue;
+  }
   p {
     @apply text-grayishBlue;
   }
