@@ -1,15 +1,15 @@
 import React from "react";
 
-import MockupBg from "../assets/image-mockups.png";
+import Mockup from "../assets/image-mockups.png";
 import PatternMobile from "../assets/bg-intro-mobile.svg";
+import PatternDesktop from "../assets/bg-intro-desktop.svg";
 
 const Section1 = () => {
   return (
-    <div className='bg-red-500 h-64'>
-      <div>
-        {/* <div className='max-w-screen-xl mx-auto px-5 space-y-10 text-center md:text-left mt-10 mb-20 md:my-0'>
-        <h1 className='w-full md:w-1/2'>Next generation digital banking</h1>
-        <p className='w-full md:w-4/12'>
+    <div className='bg-veryLightGray md:min-h-screen flex flex-col-reverse md:flex-row items-center'>
+      <div className='bg-blue-500 px-5 lg:pl-32 space-y-10 py-10 text-center md:text-left'>
+        <h1 className='w-full '>Next generation digital banking</h1>
+        <p className='w-full '>
           Take your financial life online. Your easybank account will be a
           one-stop-shop for spending, saving, budgeting, investing, and much
           more.
@@ -17,9 +17,16 @@ const Section1 = () => {
         <button className='rounded-[1.2rem] bg-gradient-to-r from-limeGreen  to-brightCyan py-3 px-10 text-white'>
           Request Invite
         </button>
-      </div> */}
       </div>
-      <div></div>
+      <div
+        className='bg-red-500 min-h-[30vh] w-full bg-no-repeat bg-cover'
+        style={{
+          backgroundImage: `url(${PatternMobile})`,
+          backgroundPositionY: "3rem",
+        }}
+      >
+        <img src={Mockup} alt='mockup' className='px-5' />
+      </div>
     </div>
   );
 };
