@@ -6,8 +6,8 @@ import PatternDesktop from "../assets/bg-intro-desktop.svg";
 
 const Section1 = () => {
   return (
-    <div className='bg-veryLightGray md:min-h-screen flex flex-col-reverse md:flex-row items-center'>
-      <div className='bg-blue-500 px-5 lg:pl-32 space-y-10 py-10 text-center md:text-left'>
+    <div className='bg-veryLightGray lg:min-h-[80vh] flex flex-col-reverse lg:flex-row items-center relative'>
+      <div className='px-5 lg:pl-32 space-y-10 py-10 text-center lg:text-left w-auto lg:w-[45vw]'>
         <h1 className='w-full '>Next generation digital banking</h1>
         <p className='w-full '>
           Take your financial life online. Your easybank account will be a
@@ -19,13 +19,17 @@ const Section1 = () => {
         </button>
       </div>
       <div
-        className='bg-red-500 min-h-[30vh] w-full bg-no-repeat bg-cover'
-        style={{
-          backgroundImage: `url(${PatternMobile})`,
-          backgroundPositionY: "3rem",
-        }}
+        className='section1 min-h-[30vh] lg:min-h-[80vh] xl:min-h-[85vh] lg:h-full w-full lg:w-[55vw]'
+        // style={{
+        //   backgroundImage: `url(${PatternMobile})`,
+        //   backgroundPositionY: "3rem",
+        // }}
       >
-        <img src={Mockup} alt='mockup' className='px-5' />
+        <img
+          src={Mockup}
+          alt='mockup'
+          className='px-5 m-auto lg:absolute lg:top-0 lg:-right-20 lg:w-[62vw] xl:w-[52vw]'
+        />
       </div>
     </div>
   );
