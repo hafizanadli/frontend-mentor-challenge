@@ -4,7 +4,10 @@
 
 @layer base {
   h1 {
-    @apply text-4xl md:text-6xl;
+    @apply text-4xl md:text-6xl text-darkBlue;
+  }
+  p {
+    @apply text-grayishBlue;
   }
 }
 
