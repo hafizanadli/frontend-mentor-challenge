@@ -29,7 +29,7 @@ const Section2 = () => {
     },
   ];
   return (
-    <div className='px-5 lg:px-32 py-10 lg:py-20 bg-lightGrayishBlue space-y-10'>
+    <div className='px-5 lg:px-32 py-10 lg:py-20 bg-lightGrayishBlue space-y-10 md:space-y-20'>
       <section className='text-center md:text-left space-y-8'>
         <h2>Why choose Easybank?</h2>
         <p>
@@ -40,7 +40,7 @@ const Section2 = () => {
       <section className='flex flex-col md:flex-row space-y-8 md:space-y-0 space-x-0 md:space-x-10'>
         {list.map((el, index) => (
           <div
-            className='space-y-5 flex flex-col items-center md:items-start text-center md:text-left'
+            className='space-y-5 md:space-y-8 flex flex-col items-center md:items-start text-center md:text-left'
             key={index}
           >
             <img src={el.icon} alt='icon' />
