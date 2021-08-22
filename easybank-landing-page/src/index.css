@@ -6,6 +6,12 @@
   h1 {
     @apply text-4xl md:text-6xl text-darkBlue;
   }
+  h2 {
+    @apply text-3xl md:text-5xl text-darkBlue;
+  }
+  h3 {
+    @apply text-xl md:text-2xl text-darkBlue;
+  }
   p {
     @apply text-grayishBlue;
   }
