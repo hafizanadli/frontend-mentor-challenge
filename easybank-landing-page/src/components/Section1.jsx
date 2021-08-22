@@ -7,7 +7,7 @@ import PatternDesktop from "../assets/bg-intro-desktop.svg";
 const Section1 = () => {
   return (
     <div className='bg-veryLightGray lg:min-h-[80vh] flex flex-col-reverse lg:flex-row items-center relative'>
-      <div className='px-5 lg:pl-32 space-y-10 py-10 text-center lg:text-left w-auto lg:w-[45vw]'>
+      <div className='px-5 lg:pl-32 space-y-10 py-10 text-center lg:text-left w-full lg:w-[45vw]'>
         <h1 className='w-full '>Next generation digital banking</h1>
         <p className='w-full '>
           Take your financial life online. Your easybank account will be a
