@@ -14,7 +14,7 @@ const Section1 = () => {
           one-stop-shop for spending, saving, budgeting, investing, and much
           more.
         </p>
-        <button className='rounded-[1.2rem] bg-gradient-to-r from-limeGreen  to-brightCyan py-3 px-10 text-white'>
+        <button className='rounded-[1.2rem] bg-gradient-to-r from-limeGreen  to-brightCyan py-3 px-10 text-white hover:opacity-80'>
           Request Invite
         </button>
       </div>

@@ -58,31 +58,31 @@ const Footer = () => {
             </div>
           </div>
           <ul className='space-y-2 text-sm text-veryLightGray text-center md:text-left'>
-            <li>
+            <li className='hover:text-limeGreen'>
               <a href='#'>About Us</a>
             </li>
-            <li>
+            <li className='hover:text-limeGreen'>
               <a href='#'>Contact</a>
             </li>
-            <li>
+            <li className='hover:text-limeGreen'>
               <a href='#'>Blog</a>
             </li>
           </ul>
           <ul className='space-y-2 text-sm text-veryLightGray text-center md:text-left'>
-            <li>
+            <li className='hover:text-limeGreen'>
               <a href='#'>Careers</a>
             </li>
-            <li>
+            <li className='hover:text-limeGreen'>
               <a href='#'>Support</a>
             </li>
-            <li>
+            <li className='hover:text-limeGreen'>
               <a href='#'>Privacy Policy</a>
             </li>
           </ul>
         </div>
 
         <div className='flex flex-col items-center md:items-end justify-between space-y-2'>
-          <button className='rounded-[1.2rem] bg-gradient-to-r from-limeGreen  to-brightCyan py-3 px-6 text-white text-sm'>
+          <button className='rounded-[1.2rem] bg-gradient-to-r from-limeGreen  to-brightCyan py-3 px-6 text-white text-sm hover:opacity-80'>
             Request Invite
           </button>
           <p className='text-sm'>Easybank. All Rights Reserved</p>
