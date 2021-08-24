@@ -45,7 +45,12 @@ const Navbar = ({ isOpen, setIsOpen }) => {
       >
         <ul className='space-y-3'>
           {nav.map((el, index) => (
-            <li className='' key={index}>
+            <li
+              className=''
+              key={index}
+              className='hover:text-limeGreen'
+              onClick={() => setIsOpen(false)}
+            >
               <a href='#' className=''>
                 {el.title}
               </a>

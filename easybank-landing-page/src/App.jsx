@@ -19,16 +19,8 @@ function App() {
         className={`absolute bg-gradient-to-b from-black  to-white ${
           isOpen ? "opacity-75 w-full" : "opacity-0 w-0"
         }  h-full top-0 transition duration-300 ease-in-out`}
-      ></div>
-      {/* <div className='flex'>
-        <div className='w-10 h-10 bg-darkBlue' />
-        <div className='w-10 h-10 bg-limeGreen' />
-        <div className='w-10 h-10 bg-brightCyan' />
-        <div className='w-10 h-10 bg-white' />
-        <div className='w-10 h-10 bg-lightGrayishBlue' />
-        <div className='w-10 h-10 bg-grayishBlue' />
-        <div className='w-10 h-10 bg-veryLightGray' />
-      </div> */}
+        onClick={() => setIsOpen(false)}
+      />
     </main>
   );
 }
